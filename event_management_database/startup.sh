@@ -137,6 +137,12 @@ echo "To connect to the database, use one of the following commands:"
 echo "mongosh -u ${DB_USER} -p ${DB_PASSWORD} --port ${DB_PORT} --authenticationDatabase admin ${DB_NAME}"
 echo "$(cat db_connection.txt)"
 
+# Run initialization instructions
+echo ""
+echo "Next step: Initialize collections, validators, and indexes (idempotent)."
+echo "Run:"
+echo "  mongosh \"mongodb://appuser:${DB_PASSWORD}@localhost:${DB_PORT}/${DB_NAME}?authSource=admin\" init_db.js"
+
 # MongoDB continues running in background
 echo ""
 echo "MongoDB is running in the background."
